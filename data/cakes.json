@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Classic Fresh Cream Cake",
+    "category": "Birthday cake",
+    "description": "A light celebration cake style suitable for birthdays, family gatherings and simple personalised messages.",
+    "image": ""
+  },
+  {
+    "name": "Chocolate Celebration Cake",
+    "category": "Birthday cake",
+    "description": "A rich chocolate-style option for customers who want a premium birthday centrepiece.",
+    "image": ""
+  },
+  {
+    "name": "Fruit Topped Cake",
+    "category": "Birthday cake",
+    "description": "A fresh fruit-inspired cake style for colourful celebrations and elegant gifting.",
+    "image": ""
+  },
+  {
+    "name": "Custom Theme Cake",
+    "category": "Birthday cake",
+    "description": "A flexible starting point for colours, decorations and special requests subject to confirmation.",
+    "image": ""
+  }
+]
