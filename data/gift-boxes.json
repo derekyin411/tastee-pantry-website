@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Mid-Autumn Festival Gift Box",
+    "category": "Festival gifting",
+    "description": "Seasonal gift box concept for family, client and staff gifting programmes.",
+    "image": "",
+    "enquiryLabel": "Enquire about Mid-Autumn"
+  },
+  {
+    "name": "Dragon Boat Festival Gift Box",
+    "category": "Festival gifting",
+    "description": "Editable gift box card for Dragon Boat Festival seasonal ordering and corporate quantities.",
+    "image": "",
+    "enquiryLabel": "Enquire about Dragon Boat"
+  },
+  {
+    "name": "Chinese New Year Gift Box",
+    "category": "Festival gifting",
+    "description": "Premium New Year gifting option for clients, teams and family celebration needs.",
+    "image": "",
+    "enquiryLabel": "Enquire about CNY"
+  },
+  {
+    "name": "Christmas / Corporate Gift Box",
+    "category": "Corporate gifting",
+    "description": "Customisable end-of-year gifting concept for companies, teams and client appreciation.",
+    "image": "",
+    "enquiryLabel": "Enquire about corporate gifting"
+  }
+]
