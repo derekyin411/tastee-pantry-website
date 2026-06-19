@@ -74,22 +74,42 @@ Add a new object inside the array. Example bakery product:
 
 Gift boxes can also include an `enquiryLabel` field to show a button on the card.
 
-## How to update form email settings
+## How to connect the Formspree forms
 
-The forms use `mailto:` links for version 1, so no backend service or payment integration is required. Submitting a form opens the customer's email app with the enquiry details pre-filled.
+The website stays fully static. The three enquiry forms submit directly to Formspree endpoints with `POST` requests, so no custom backend or `mailto:` form submission is required.
 
-To change the recipient email address:
+There are three separate placeholder form actions in `index.html`:
 
-1. Open `assets/script.js`.
-2. Update the `SITE_EMAIL` value near the top of the file.
+- Birthday cake orders: `https://formspree.io/f/YOUR_FORM_ID`
+- Catering enquiries: `https://formspree.io/f/YOUR_FORM_ID`
+- Wholesale / corporate enquiries: `https://formspree.io/f/YOUR_FORM_ID`
 
-Current value:
+Replace each placeholder with the correct Formspree endpoint before publishing the forms.
 
-```js
-const SITE_EMAIL = 'tasteepantrynz@hotmail.com';
+### Step-by-step Formspree setup
+
+1. Sign in to Formspree or create an account at <https://formspree.io/>.
+2. Create a new form for birthday cake orders.
+3. Copy the endpoint URL Formspree provides. It normally looks like `https://formspree.io/f/abcdwxyz`.
+4. Open `index.html` and find the birthday cake order form near `id="cake-order"`.
+5. Replace only the placeholder `action` value with the birthday cake Formspree endpoint:
+
+```html
+<form class="enquiry-form" action="https://formspree.io/f/abcdwxyz" method="POST" data-form-type="Birthday cake order">
 ```
 
-For a future version, the forms can be connected to a form service or backend endpoint if Tastee Pantry wants submissions to work without relying on the customer's email app.
+6. Repeat the same process for the catering enquiry form.
+7. Repeat the same process for the wholesale / corporate enquiry form.
+8. In Formspree, configure each form's notification recipient, spam settings, and confirmation settings as needed.
+9. Publish the static website and submit a test enquiry for each form.
+10. Confirm the success message appears on the website and that the submission arrives in Formspree or the configured inbox.
+
+### Form behavior
+
+- If a placeholder endpoint is still present, the website shows an error message asking editors to replace the endpoint.
+- When a real Formspree endpoint accepts the submission, the website shows a success message and clears the form.
+- If Formspree returns an error or the network request fails, the website shows an error message asking the customer to try again or contact Tastee Pantry directly.
+- Each form includes a hidden `_subject` value so incoming notifications can be labelled by enquiry type.
 
 ## How to deploy the website
 

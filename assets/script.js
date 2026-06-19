@@ -1,4 +1,4 @@
-const SITE_EMAIL = 'tasteepantrynz@hotmail.com'; // Update this if Tastee Pantry changes its order/enquiry email address.
+const PLACEHOLDER_FORMSPREE_ACTION = 'https://formspree.io/f/YOUR_FORM_ID';
 
 const grids = [
   { id: 'cake-grid', select: 'cake-style-select' },
@@ -53,12 +53,48 @@ function setMinimumCakeDate() {
   });
 }
 
-function formToMailto(form) {
+function setFormStatus(form, message, status) {
+  const statusNode = form.querySelector('.form-status');
+  if (!statusNode) return;
+  statusNode.textContent = message;
+  statusNode.classList.remove('success', 'error');
+  if (status) statusNode.classList.add(status);
+}
+
+async function submitFormspreeForm(form) {
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalButtonText = submitButton?.textContent;
   const type = form.dataset.formType || 'Website enquiry';
-  const lines = Array.from(new FormData(form).entries()).map(([key, value]) => `${key}: ${value || 'Not provided'}`);
-  const subject = encodeURIComponent(`Tastee Pantry - ${type}`);
-  const body = encodeURIComponent(`${type}\n\n${lines.join('\n')}\n\nSubmitted from the Tastee Pantry website.`);
-  window.location.href = `mailto:${SITE_EMAIL}?subject=${subject}&body=${body}`;
+
+  setFormStatus(form, '', '');
+
+  if (form.getAttribute('action') === PLACEHOLDER_FORMSPREE_ACTION) {
+    setFormStatus(form, 'This form is not ready yet. Please replace the placeholder Formspree endpoint before publishing.', 'error');
+    return;
+  }
+
+  submitButton?.setAttribute('disabled', '');
+  if (submitButton) submitButton.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    });
+
+    if (!response.ok) throw new Error(`Formspree returned ${response.status}`);
+
+    form.reset();
+    setMinimumCakeDate();
+    setFormStatus(form, `Thank you — your ${type.toLowerCase()} has been sent. We will contact you to confirm the details.`, 'success');
+  } catch (error) {
+    console.error(`Could not submit ${type}`, error);
+    setFormStatus(form, 'Sorry, something went wrong. Please check your details and try again, or contact Tastee Pantry directly.', 'error');
+  } finally {
+    submitButton?.removeAttribute('disabled');
+    if (submitButton && originalButtonText) submitButton.textContent = originalButtonText;
+  }
 }
 
 function setupForms() {
@@ -66,7 +102,7 @@ function setupForms() {
     form.addEventListener('submit', event => {
       event.preventDefault();
       if (!form.reportValidity()) return;
-      formToMailto(form);
+      submitFormspreeForm(form);
     });
   });
 }

@@ -69,7 +69,9 @@
             <h3>Submit a birthday cake order</h3>
             <p class="notice">Payment is made in store. Orders are subject to confirmation and availability. Please place birthday cake orders at least 1 day in advance.</p>
           </div>
-          <form class="enquiry-form" data-form-type="Birthday cake order">
+          <form class="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-form-type="Birthday cake order">
+            <!-- TODO: Replace the placeholder Formspree action URL above with the birthday cake order form endpoint. -->
+            <input type="hidden" name="_subject" value="Tastee Pantry - Birthday cake order" />
             <label>Customer name<input name="Customer name" autocomplete="name" required /></label>
             <label>Phone number<input name="Phone number" type="tel" autocomplete="tel" required /></label>
             <label>Email<input name="Email" type="email" autocomplete="email" required /></label>
@@ -80,7 +82,8 @@
             <label>Flavour<select name="Flavour" required><option value="">Select flavour</option><option>Vanilla cream</option><option>Chocolate</option><option>Fruit cream</option><option>Matcha</option><option>Custom / please advise</option></select></label>
             <label class="full">Message on cake<input name="Message on cake" maxlength="80" placeholder="e.g. Happy Birthday Mia" /></label>
             <label class="full">Special requests<textarea name="Special requests" rows="4" placeholder="Allergies, colours, decorations, serving needs"></textarea></label>
-            <button class="button primary" type="submit">Email cake order</button>
+            <p class="form-status" aria-live="polite"></p>
+            <button class="button primary" type="submit">Submit cake order</button>
           </form>
         </div>
       </section>
@@ -95,7 +98,9 @@
         <div class="card-grid" id="catering-grid" data-source="data/catering.json"></div>
         <div class="form-panel">
           <div><p class="eyebrow">Catering enquiry</p><h3>Tell us what you need</h3><p>Send your event details and we will confirm options, availability and collection requirements.</p></div>
-          <form class="enquiry-form" data-form-type="Catering enquiry">
+          <form class="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-form-type="Catering enquiry">
+            <!-- TODO: Replace the placeholder Formspree action URL above with the catering enquiry form endpoint. -->
+            <input type="hidden" name="_subject" value="Tastee Pantry - Catering enquiry" />
             <label>Customer / company name<input name="Customer or company name" required /></label>
             <label>Phone number<input name="Phone number" type="tel" required /></label>
             <label>Email<input name="Email" type="email" required /></label>
@@ -103,7 +108,8 @@
             <label>Number of people<input name="Number of people" type="number" min="1" required /></label>
             <label>Catering category<select name="Catering category" id="catering-select" required><option value="">Select category</option></select></label>
             <label class="full">Enquiry details<textarea name="Enquiry details" rows="5" required placeholder="Preferred boxes, dietary notes, budget guidance, pickup timing"></textarea></label>
-            <button class="button primary" type="submit">Email catering enquiry</button>
+            <p class="form-status" aria-live="polite"></p>
+            <button class="button primary" type="submit">Submit catering enquiry</button>
           </form>
         </div>
       </section>
@@ -115,14 +121,17 @@
 
       <section class="section split" id="wholesale">
         <div><p class="eyebrow">Wholesale / Corporate Enquiries</p><h2>Bakery supply, gifting and event support for businesses.</h2><p>Contact Tastee Pantry for wholesale bakery supply, office catering, seasonal gift boxes, client gifting and custom corporate orders.</p><p>We can discuss product requirements, order frequency, packaging preferences and collection arrangements.</p></div>
-        <form class="enquiry-form panel" data-form-type="Wholesale or corporate enquiry">
+        <form class="enquiry-form panel" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-form-type="Wholesale or corporate enquiry">
+          <!-- TODO: Replace the placeholder Formspree action URL above with the wholesale / corporate enquiry form endpoint. -->
+          <input type="hidden" name="_subject" value="Tastee Pantry - Wholesale or corporate enquiry" />
           <label>Business / customer name<input name="Business or customer name" required /></label>
           <label>Contact person<input name="Contact person" required /></label>
           <label>Phone number<input name="Phone number" type="tel" required /></label>
           <label>Email<input name="Email" type="email" required /></label>
           <label>Enquiry type<select name="Enquiry type" required><option value="">Select enquiry type</option><option>Wholesale bakery products</option><option>Corporate catering</option><option>Seasonal gift boxes</option><option>Custom order</option></select></label>
           <label class="full">Message<textarea name="Message" rows="5" required></textarea></label>
-          <button class="button primary" type="submit">Email enquiry</button>
+          <p class="form-status" aria-live="polite"></p>
+          <button class="button primary" type="submit">Submit enquiry</button>
         </form>
       </section>
 
