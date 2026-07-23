@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Tastee Pantry is a local Auckland cakery and bakery offering birthday cakes, custom cakes and everyday bakery products." />
-    <title>Tastee Pantry | Auckland Cakery & Bakery</title>
+    <meta name="description" content="DEVARO is an Auckland cakery and bakery for custom cakes, birthday cakes and modern Asian bakery favourites crafted in New Zealand." />
+    <title>DEVARO | Auckland Cakery & Bakery</title>
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="#home" aria-label="Tastee Pantry home">
-          <span class="brand-mark">TP</span>
-          <span><strong>Tastee Pantry</strong><small>Auckland Cakery & Bakery</small></span>
+        <a class="brand" href="#home" aria-label="DEVARO home">
+          <span class="brand-mark">D</span>
+          <span><strong>DEVARO</strong><small>Auckland Cakery & Bakery</small></span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
         <div class="nav-links" id="nav-links">
@@ -25,33 +25,41 @@
     </header>
 
     <main id="home">
-      <section class="hero section">
-        <div class="hero-content">
-          <p class="eyebrow">Auckland Cakery & Bakery</p>
-          <h1>Birthday cakes and everyday bakery favourites from Tastee Pantry.</h1>
-          <p class="lead">Explore custom cake styles for celebrations and browse our daily bakery range. Cake orders are submitted online for confirmation, with payment made in store.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#cake-order">Order a cake</a>
-            <a class="button secondary" href="#bakery">View bakery products</a>
+      <section class="split-hero" aria-label="Choose Cakery or Bakery">
+        <div class="hero-brand-panel">
+          <p class="eyebrow">Modern Asian food, crafted in New Zealand</p>
+          <h1>DEVARO</h1>
+          <p>A focused Auckland cakery and bakery brand built around two clear collections: celebration cakes and everyday bakery favourites.</p>
+        </div>
+
+        <a class="hero-choice cakery-choice" href="#cakery" aria-label="Explore Cakery">
+          <span class="choice-kicker">01</span>
+          <div>
+            <p class="eyebrow">Cakery</p>
+            <h2>Custom cakes for celebrations.</h2>
+            <p>Birthday cakes, fresh cream styles, fruit cakes and custom requests prepared for Auckland pick-up.</p>
           </div>
-        </div>
-        <div class="hero-card" aria-label="Tastee Pantry website sections">
-          <h2>What we offer</h2>
-          <ul>
-            <li>Birthday cakes and custom cake requests</li>
-            <li>Fresh cream, chocolate, fruit and themed cake styles</li>
-            <li>Sweet buns, savoury buns, rolls, cakes and slices</li>
-            <li>Simple online cake order request form</li>
-          </ul>
-        </div>
+          <span class="choice-action">Explore Cakery</span>
+        </a>
+
+        <a class="hero-choice bakery-choice" href="#bakery" aria-label="Explore Bakery">
+          <span class="choice-kicker">02</span>
+          <div>
+            <p class="eyebrow">Bakery</p>
+            <h2>Daily bakes with a modern Asian bakery feel.</h2>
+            <p>Soft buns, savoury favourites, rolls, cakes and slices presented as a clean retail collection.</p>
+          </div>
+          <span class="choice-action">Explore Bakery</span>
+        </a>
       </section>
 
-      <section class="section intro-grid" aria-label="Tastee Pantry sections">
-        <article><h3>Cakery</h3><p>Browse cake styles and submit your cake order details for confirmation.</p></article>
-        <article><h3>Bakery</h3><p>Explore everyday bakery products and update the range as photos and product details are added.</p></article>
+      <section class="section brand-intro" aria-label="DEVARO brand direction">
+        <p class="eyebrow">A cleaner direction</p>
+        <h2>One brand. Two focused experiences.</h2>
+        <p>DEVARO keeps the website intentionally simple: choose Cakery when you need a cake, or Bakery when you want to browse everyday products. No clutter, no broad wholesale messaging, no mixed catering menu.</p>
       </section>
 
-      <section class="section" id="cakery">
+      <section class="section collection-section" id="cakery">
         <div class="section-heading">
           <p class="eyebrow">Cakery</p>
           <h2>Celebration cakes made for pick-up in Auckland.</h2>
@@ -62,12 +70,12 @@
         <div class="form-panel" id="cake-order">
           <div>
             <p class="eyebrow">Cake order request</p>
-            <h3>Submit a birthday cake order</h3>
+            <h3>Submit a cake order</h3>
             <p class="notice">Payment is made in store. Orders are subject to confirmation and availability. Please place cake orders at least 1 day in advance.</p>
           </div>
           <form class="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-form-type="Cake order">
             <!-- TODO: Replace the placeholder Formspree action URL above with the cake order form endpoint. -->
-            <input type="hidden" name="_subject" value="Tastee Pantry - Cake order" />
+            <input type="hidden" name="_subject" value="DEVARO - Cake order" />
             <label>Customer name<input name="Customer name" autocomplete="name" required /></label>
             <label>Phone number<input name="Phone number" type="tel" autocomplete="tel" required /></label>
             <label>Email<input name="Email" type="email" autocomplete="email" required /></label>
@@ -84,17 +92,21 @@
         </div>
       </section>
 
-      <section class="section alt" id="bakery">
+      <section class="section collection-section alt" id="bakery">
         <div class="section-heading">
           <p class="eyebrow">Bakery</p>
           <h2>Daily bakery products and customer favourites.</h2>
-          <p>Product cards are loaded from <code>data/bakery.json</code> so names, categories, descriptions and images can be edited easily.</p>
+          <p>Soft, approachable bakery products presented under a sharper DEVARO brand system. Product names, categories, descriptions and images are loaded from <code>data/bakery.json</code>.</p>
         </div>
         <div class="card-grid" id="bakery-grid" data-source="data/bakery.json"></div>
       </section>
 
       <section class="section contact" id="contact">
-        <div class="section-heading"><p class="eyebrow">Contact</p><h2>Visit or email Tastee Pantry.</h2><p>Please contact us to confirm cake availability, bakery product details and collection arrangements.</p></div>
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Visit or email DEVARO.</h2>
+          <p>Please contact us to confirm cake availability, bakery product details and collection arrangements.</p>
+        </div>
         <div class="contact-cards">
           <a href="mailto:tasteepantrynz@hotmail.com"><strong>Email</strong><span>tasteepantrynz@hotmail.com</span></a>
           <a href="https://maps.google.com/?q=6B%2F20%20Link%20Drive%2C%20Wairau%20Valley%2C%20Auckland%200627" target="_blank" rel="noreferrer"><strong>Address</strong><span>6B/20 Link Drive, Wairau Valley, Auckland 0627</span></a>
@@ -102,7 +114,7 @@
       </section>
     </main>
 
-    <footer class="footer"><p>&copy; <span id="year"></span> Tastee Pantry. Auckland, New Zealand.</p></footer>
+    <footer class="footer"><p>&copy; <span id="year"></span> DEVARO. Auckland, New Zealand.</p></footer>
     <script src="assets/script.js" defer></script>
   </body>
 </html>
