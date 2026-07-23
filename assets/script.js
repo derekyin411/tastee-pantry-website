@@ -7,7 +7,7 @@ const grids = [
 
 function imageOrPlaceholder(item) {
   if (item.image) return `<img src="${item.image}" alt="${item.name}">`;
-  return `<span>${item.category || 'Tastee Pantry'}<br>${item.name}</span>`;
+  return `<span>${item.category || 'DEVARO'}<br>${item.name}</span>`;
 }
 
 function card(item) {
@@ -36,7 +36,7 @@ async function loadCards() {
         items.forEach(item => selectNode?.insertAdjacentHTML('beforeend', `<option>${item.name}</option>`));
       }
     } catch (error) {
-      grid.innerHTML = '<p>Products are temporarily unavailable. Please email Tastee Pantry for current options.</p>';
+      grid.innerHTML = '<p>Products are temporarily unavailable. Please email DEVARO for current options.</p>';
       console.error(`Could not load ${grid.dataset.source}`, error);
     }
   }));
@@ -88,7 +88,7 @@ async function submitFormspreeForm(form) {
     setFormStatus(form, `Thank you — your ${type.toLowerCase()} has been sent. We will contact you to confirm the details.`, 'success');
   } catch (error) {
     console.error(`Could not submit ${type}`, error);
-    setFormStatus(form, 'Sorry, something went wrong. Please check your details and try again, or contact Tastee Pantry directly.', 'error');
+    setFormStatus(form, 'Sorry, something went wrong. Please check your details and try again, or contact DEVARO directly.', 'error');
   } finally {
     submitButton?.removeAttribute('disabled');
     if (submitButton && originalButtonText) submitButton.textContent = originalButtonText;
