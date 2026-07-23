@@ -2,31 +2,31 @@
   {
     "name": "Assorted Sweet Buns",
     "category": "Sweet buns",
-    "description": "Retail-friendly sweet bun selection for everyday bakery customers and office sharing.",
+    "description": "Soft sweet buns for everyday bakery customers, available in changing flavours and fillings.",
     "image": ""
   },
   {
     "name": "Savoury Bun Selection",
     "category": "Savoury buns",
-    "description": "Placeholder savoury bun range for lunch, snacks and B2B supply enquiries.",
+    "description": "Fresh savoury buns for snacks, lunch and easy takeaway bakery options.",
     "image": ""
   },
   {
     "name": "Soft Bakery Rolls",
     "category": "Rolls",
-    "description": "Simple roll products suitable for retail shelves, catering boxes or wholesale discussion.",
+    "description": "Simple soft rolls suitable for family meals, lunch boxes and everyday bakery use.",
     "image": ""
   },
   {
-    "name": "Cakes and Slices Box",
+    "name": "Cakes and Slices",
     "category": "Cakes and slices",
-    "description": "Editable product entry for slices, small cakes and sweet bakery cabinet items.",
+    "description": "Editable product entry for slices, small cakes and sweet bakery cabinet favourites.",
     "image": ""
   },
   {
     "name": "Seasonal Bakery Feature",
     "category": "Seasonal products",
-    "description": "Use this card for limited-time products, holiday specials or festival bakery items.",
+    "description": "Use this card for limited-time bakery specials and new seasonal products.",
     "image": ""
   }
 ]
