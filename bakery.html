@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore DEVARO bakery products and everyday customer favourites." />
+    <title>DEVARO | Bakery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="DEVARO home"><span class="brand-wordmark">DEV<span class="brand-a">Λ</span>RO</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="cakery.html">Cakery</a>
+          <a href="bakery.html">Bakery</a>
+          <a href="about.html">Our Story</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <p class="eyebrow">DEVARO / Bakery</p>
+        <h1>Everyday bakery favourites with a modern Asian bakery feel.</h1>
+        <p>Browse the daily bakery range below. Product names, categories, descriptions and images are managed from the bakery data file so the collection can evolve easily over time.</p>
+      </section>
+
+      <section class="section" id="bakery">
+        <div class="section-heading">
+          <p class="eyebrow">Bakery collection</p>
+          <h2>Soft buns, savoury favourites, rolls, cakes and slices.</h2>
+        </div>
+        <div class="card-grid" id="bakery-grid" data-source="data/bakery.json"></div>
+      </section>
+    </main>
+
+    <footer class="footer"><p>&copy; <span id="year"></span> DEVARO. Auckland, New Zealand.</p></footer>
+    <script src="assets/script.js" defer></script>
+  </body>
+</html>
