@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore DEVARO custom cakes and submit a cake order for Auckland pick-up." />
+    <title>DEVARO | Cakery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="DEVARO home"><span class="brand-wordmark">DEV<span class="brand-a">Λ</span>RO</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="cakery.html">Cakery</a>
+          <a href="bakery.html">Bakery</a>
+          <a href="about.html">Our Story</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <p class="eyebrow">DEVARO / Cakery</p>
+        <h1>Custom cakes for birthdays and celebrations.</h1>
+        <p>Choose a starting style below and submit your preferred date, flavour and message for confirmation. Payment is made in store after your order is confirmed.</p>
+        <div class="page-actions"><a class="button primary" href="#cake-order">Order a cake</a></div>
+      </section>
+
+      <section class="section" id="cakery">
+        <div class="section-heading">
+          <p class="eyebrow">Cake collection</p>
+          <h2>Start with a style, then customise the details.</h2>
+        </div>
+        <div class="card-grid" id="cake-grid" data-source="data/cakes.json"></div>
+
+        <div class="form-panel" id="cake-order">
+          <div>
+            <p class="eyebrow">Cake order request</p>
+            <h3>Submit a cake order</h3>
+            <p class="notice">Payment is made in store. Orders are subject to confirmation and availability. Please place cake orders at least 1 day in advance.</p>
+          </div>
+          <form class="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-form-type="Cake order">
+            <input type="hidden" name="_subject" value="DEVARO - Cake order" />
+            <label>Customer name<input name="Customer name" autocomplete="name" required /></label>
+            <label>Phone number<input name="Phone number" type="tel" autocomplete="tel" required /></label>
+            <label>Email<input name="Email" type="email" autocomplete="email" required /></label>
+            <label>Pick-up date<input name="Pick-up date" type="date" required data-min-days="1" /></label>
+            <label>Pick-up time<input name="Pick-up time" type="time" required /></label>
+            <label>Cake style<select name="Cake style" id="cake-style-select" required><option value="">Select a cake style</option></select></label>
+            <label>Cake size<select name="Cake size" required><option value="">Select size</option><option>6 inch</option><option>8 inch</option><option>10 inch</option><option>Custom / please advise</option></select></label>
+            <label>Flavour<select name="Flavour" required><option value="">Select flavour</option><option>Vanilla cream</option><option>Chocolate</option><option>Fruit cream</option><option>Matcha</option><option>Custom / please advise</option></select></label>
+            <label class="full">Message on cake<input name="Message on cake" maxlength="80" placeholder="e.g. Happy Birthday Mia" /></label>
+            <label class="full">Special requests<textarea name="Special requests" rows="4" placeholder="Allergies, colours, decorations, serving needs"></textarea></label>
+            <p class="form-status" aria-live="polite"></p>
+            <button class="button primary" type="submit">Submit cake order</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><p>&copy; <span id="year"></span> DEVARO. Auckland, New Zealand.</p></footer>
+    <script src="assets/script.js" defer></script>
+  </body>
+</html>
