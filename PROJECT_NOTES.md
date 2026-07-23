@@ -1,23 +1,48 @@
-# Tastee Pantry Website Project Notes
+# DEVARO Website Project Notes
 
-This file is the working project record for the Tastee Pantry website. It is intended to act as the project's lightweight database / memory until a proper CMS or business database is created.
+This file is the working project record for the DEVARO website. It acts as the project's lightweight database / memory until a proper CMS or business database is created.
 
 ## Project identity
 
-- Business / website name: Tastee Pantry
+- New brand / website name: DEVARO
+- Previous working site name: Tastee Pantry
 - GitHub repository: derekyin411/tastee-pantry-website
 - GitHub Pages temporary URL: https://derekyin411.github.io/tastee-pantry-website/
 - Current public status: GitHub Pages site on a public GitHub repository
 - Current build type: static website using HTML, CSS, JavaScript, JSON data files, and GitHub Pages
+- Operational contact email still used on site: tasteepantrynz@hotmail.com
+
+## Brand direction
+
+DEVARO should be treated as a cleaner, more premium brand direction for the user's bakery/cakery business.
+
+Preferred direction from previous brand discussion:
+
+- Modern Asian food, crafted in New Zealand
+- Minimal wordmark direction
+- Black-based premium visual identity
+- Charcoal black, warm white, grey and restrained warm gold / beige accents
+- Avoid childish bakery icons
+- Avoid chef-hat, cartoon bread, generic macaron imagery
+- Future logo concept may incorporate cake or Taiwanese bread references rather than buns / dumplings
 
 ## Current site direction
 
-The website has been simplified to focus on two customer-facing sections only:
+The website is simplified to focus on two customer-facing sections only:
 
 1. Cakery
 2. Bakery
 
-The site should be treated as a retail-focused website, not a broad wholesale or catering website.
+The site should feel premium, focused and visually confident. It should not look like a broad wholesale supplier website or a cluttered catering website.
+
+## Current homepage design
+
+The homepage now uses a black split-screen concept:
+
+- Left / first choice: Cakery
+- Right / second choice: Bakery
+- Main brand panel: DEVARO
+- Tone: black, minimal, premium, warm accent details
 
 ## Current navigation
 
@@ -65,6 +90,7 @@ Purpose:
 
 - Daily bakery product display
 - Retail product browsing
+- Modern Asian bakery feel
 
 Suggested categories:
 
@@ -110,7 +136,7 @@ Recommended future file path:
 
 assets/images/logo.png
 
-Once the logo image is uploaded, update the header to use the image instead of the current text / TP mark.
+Once the logo image is uploaded, update the header to use the image instead of the current text / D mark.
 
 ## Product image status
 
@@ -129,17 +155,20 @@ Recommended image naming rules:
 
 ## Next recommended work
 
-1. Confirm the simplified Cakery + Bakery version is showing correctly on GitHub Pages.
-2. Upload the Tastee Pantry logo.
-3. Replace the header brand mark with the logo.
-4. Prepare and upload real cake images.
-5. Prepare and upload real bakery product images.
-6. Replace placeholder cake and bakery product data.
-7. Create Formspree form endpoint for cake orders.
-8. Replace the placeholder Formspree endpoint.
-9. Test cake order submission.
-10. Later: buy and connect a formal domain such as tasteepantry.co.nz or tasteepantry.nz.
+1. Confirm the DEVARO black split-screen version is showing correctly on GitHub Pages.
+2. Review whether the new visual direction feels premium enough.
+3. Upload the DEVARO logo.
+4. Replace the header brand mark with the logo.
+5. Prepare and upload real cake images.
+6. Prepare and upload real bakery product images.
+7. Replace placeholder cake and bakery product data.
+8. Create Formspree form endpoint for cake orders.
+9. Replace the placeholder Formspree endpoint.
+10. Test cake order submission.
+11. Later: buy and connect a formal DEVARO domain.
 
 ## Important caution
 
 Do not let the site become too broad again. The current strategic decision is to keep the first public version simple: Cakery + Bakery only. If additional business lines are needed later, they should be added only after the core site looks professional and the cake order process works reliably.
+
+Do not store passwords, customer records, banking details, IRD details or other sensitive credentials in this repository.
