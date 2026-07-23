@@ -2,9 +2,7 @@ const PLACEHOLDER_FORMSPREE_ACTION = 'https://formspree.io/f/YOUR_FORM_ID';
 
 const grids = [
   { id: 'cake-grid', select: 'cake-style-select' },
-  { id: 'bakery-grid' },
-  { id: 'catering-grid', select: 'catering-select' },
-  { id: 'gift-grid' }
+  { id: 'bakery-grid' }
 ];
 
 function imageOrPlaceholder(item) {
