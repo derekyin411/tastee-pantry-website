@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Tastee Pantry is an Auckland bakery for birthday cakes, bakery products, catering, festival gift boxes, wholesale and corporate enquiries." />
-    <title>Tastee Pantry | Auckland Bakery, Cakes, Catering & Corporate Gifting</title>
+    <meta name="description" content="Tastee Pantry is a local Auckland cakery and bakery offering birthday cakes, custom cakes and everyday bakery products." />
+    <title>Tastee Pantry | Auckland Cakery & Bakery</title>
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
@@ -12,15 +12,13 @@
       <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="#home" aria-label="Tastee Pantry home">
           <span class="brand-mark">TP</span>
-          <span><strong>Tastee Pantry</strong><small>Auckland Bakery</small></span>
+          <span><strong>Tastee Pantry</strong><small>Auckland Cakery & Bakery</small></span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
         <div class="nav-links" id="nav-links">
-          <a href="#cakes">Birthday Cakes</a>
-          <a href="#bakery">Bakery Products</a>
-          <a href="#catering">Catering</a>
-          <a href="#gift-boxes">Gift Boxes</a>
-          <a href="#wholesale">Wholesale</a>
+          <a href="#home">Home</a>
+          <a href="#cakery">Cakery</a>
+          <a href="#bakery">Bakery</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -29,37 +27,35 @@
     <main id="home">
       <section class="hero section">
         <div class="hero-content">
-          <p class="eyebrow">Retail • Catering • Wholesale • Corporate gifting</p>
-          <h1>Premium bakery products, celebration cakes and gifting from Auckland.</h1>
-          <p class="lead">Tastee Pantry supports everyday retail customers, birthday celebrations, office catering, wholesale buyers and seasonal corporate gifting with practical enquiry-first service.</p>
+          <p class="eyebrow">Auckland Cakery & Bakery</p>
+          <h1>Birthday cakes and everyday bakery favourites from Tastee Pantry.</h1>
+          <p class="lead">Explore custom cake styles for celebrations and browse our daily bakery range. Cake orders are submitted online for confirmation, with payment made in store.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#cake-order">Order a birthday cake</a>
-            <a class="button secondary" href="#wholesale">Wholesale enquiry</a>
+            <a class="button primary" href="#cake-order">Order a cake</a>
+            <a class="button secondary" href="#bakery">View bakery products</a>
           </div>
         </div>
-        <div class="hero-card" aria-label="Featured Tastee Pantry services">
-          <h2>How we can help</h2>
+        <div class="hero-card" aria-label="Tastee Pantry website sections">
+          <h2>What we offer</h2>
           <ul>
-            <li>Birthday cakes with in-store payment</li>
-            <li>Retail and B2B bakery product supply</li>
-            <li>Editable catering options for teams and events</li>
-            <li>Seasonal gift boxes for corporate customers</li>
+            <li>Birthday cakes and custom cake requests</li>
+            <li>Fresh cream, chocolate, fruit and themed cake styles</li>
+            <li>Sweet buns, savoury buns, rolls, cakes and slices</li>
+            <li>Simple online cake order request form</li>
           </ul>
         </div>
       </section>
 
-      <section class="section intro-grid" aria-label="Tastee Pantry website sections">
-        <article><h3>Birthday Cakes</h3><p>Browse popular styles and submit cake order details for confirmation.</p></article>
-        <article><h3>Bakery Products</h3><p>Explore placeholder product cards ready for updated photos and details.</p></article>
-        <article><h3>Catering</h3><p>Send original catering enquiries for morning teas, platters and custom boxes.</p></article>
-        <article><h3>Festival Gift Boxes</h3><p>Plan seasonal gifting for families, teams, clients and corporate programmes.</p></article>
+      <section class="section intro-grid" aria-label="Tastee Pantry sections">
+        <article><h3>Cakery</h3><p>Browse cake styles and submit your cake order details for confirmation.</p></article>
+        <article><h3>Bakery</h3><p>Explore everyday bakery products and update the range as photos and product details are added.</p></article>
       </section>
 
-      <section class="section" id="cakes">
+      <section class="section" id="cakery">
         <div class="section-heading">
-          <p class="eyebrow">Birthday Cakes</p>
+          <p class="eyebrow">Cakery</p>
           <h2>Celebration cakes made for pick-up in Auckland.</h2>
-          <p>Choose a starting style below, then submit your preferred date, flavour and message. Payment is made in store.</p>
+          <p>Choose a starting style below, then submit your preferred date, flavour and cake message. Payment is made in store after confirmation.</p>
         </div>
         <div class="card-grid" id="cake-grid" data-source="data/cakes.json"></div>
 
@@ -67,11 +63,11 @@
           <div>
             <p class="eyebrow">Cake order request</p>
             <h3>Submit a birthday cake order</h3>
-            <p class="notice">Payment is made in store. Orders are subject to confirmation and availability. Please place birthday cake orders at least 1 day in advance.</p>
+            <p class="notice">Payment is made in store. Orders are subject to confirmation and availability. Please place cake orders at least 1 day in advance.</p>
           </div>
-          <form class="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-form-type="Birthday cake order">
-            <!-- TODO: Replace the placeholder Formspree action URL above with the birthday cake order form endpoint. -->
-            <input type="hidden" name="_subject" value="Tastee Pantry - Birthday cake order" />
+          <form class="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-form-type="Cake order">
+            <!-- TODO: Replace the placeholder Formspree action URL above with the cake order form endpoint. -->
+            <input type="hidden" name="_subject" value="Tastee Pantry - Cake order" />
             <label>Customer name<input name="Customer name" autocomplete="name" required /></label>
             <label>Phone number<input name="Phone number" type="tel" autocomplete="tel" required /></label>
             <label>Email<input name="Email" type="email" autocomplete="email" required /></label>
@@ -89,54 +85,16 @@
       </section>
 
       <section class="section alt" id="bakery">
-        <div class="section-heading"><p class="eyebrow">Bakery Products</p><h2>Retail favourites and B2B bakery supply.</h2><p>Product cards are loaded from <code>data/bakery.json</code> so names, categories, descriptions and images can be edited easily.</p></div>
+        <div class="section-heading">
+          <p class="eyebrow">Bakery</p>
+          <h2>Daily bakery products and customer favourites.</h2>
+          <p>Product cards are loaded from <code>data/bakery.json</code> so names, categories, descriptions and images can be edited easily.</p>
+        </div>
         <div class="card-grid" id="bakery-grid" data-source="data/bakery.json"></div>
       </section>
 
-      <section class="section" id="catering">
-        <div class="section-heading"><p class="eyebrow">Catering</p><h2>Flexible catering for offices, events and shared tables.</h2><p>This is an original starter catering structure designed to be edited as the business refines its menu.</p></div>
-        <div class="card-grid" id="catering-grid" data-source="data/catering.json"></div>
-        <div class="form-panel">
-          <div><p class="eyebrow">Catering enquiry</p><h3>Tell us what you need</h3><p>Send your event details and we will confirm options, availability and collection requirements.</p></div>
-          <form class="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-form-type="Catering enquiry">
-            <!-- TODO: Replace the placeholder Formspree action URL above with the catering enquiry form endpoint. -->
-            <input type="hidden" name="_subject" value="Tastee Pantry - Catering enquiry" />
-            <label>Customer / company name<input name="Customer or company name" required /></label>
-            <label>Phone number<input name="Phone number" type="tel" required /></label>
-            <label>Email<input name="Email" type="email" required /></label>
-            <label>Event date<input name="Event date" type="date" required /></label>
-            <label>Number of people<input name="Number of people" type="number" min="1" required /></label>
-            <label>Catering category<select name="Catering category" id="catering-select" required><option value="">Select category</option></select></label>
-            <label class="full">Enquiry details<textarea name="Enquiry details" rows="5" required placeholder="Preferred boxes, dietary notes, budget guidance, pickup timing"></textarea></label>
-            <p class="form-status" aria-live="polite"></p>
-            <button class="button primary" type="submit">Submit catering enquiry</button>
-          </form>
-        </div>
-      </section>
-
-      <section class="section alt" id="gift-boxes">
-        <div class="section-heading"><p class="eyebrow">Festival Gift Boxes</p><h2>Seasonal gifting for families, teams and clients.</h2><p>Plan ahead for festival and corporate gift box programmes with custom quantities, presentation and recipient needs.</p></div>
-        <div class="card-grid" id="gift-grid" data-source="data/gift-boxes.json"></div>
-      </section>
-
-      <section class="section split" id="wholesale">
-        <div><p class="eyebrow">Wholesale / Corporate Enquiries</p><h2>Bakery supply, gifting and event support for businesses.</h2><p>Contact Tastee Pantry for wholesale bakery supply, office catering, seasonal gift boxes, client gifting and custom corporate orders.</p><p>We can discuss product requirements, order frequency, packaging preferences and collection arrangements.</p></div>
-        <form class="enquiry-form panel" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-form-type="Wholesale or corporate enquiry">
-          <!-- TODO: Replace the placeholder Formspree action URL above with the wholesale / corporate enquiry form endpoint. -->
-          <input type="hidden" name="_subject" value="Tastee Pantry - Wholesale or corporate enquiry" />
-          <label>Business / customer name<input name="Business or customer name" required /></label>
-          <label>Contact person<input name="Contact person" required /></label>
-          <label>Phone number<input name="Phone number" type="tel" required /></label>
-          <label>Email<input name="Email" type="email" required /></label>
-          <label>Enquiry type<select name="Enquiry type" required><option value="">Select enquiry type</option><option>Wholesale bakery products</option><option>Corporate catering</option><option>Seasonal gift boxes</option><option>Custom order</option></select></label>
-          <label class="full">Message<textarea name="Message" rows="5" required></textarea></label>
-          <p class="form-status" aria-live="polite"></p>
-          <button class="button primary" type="submit">Submit enquiry</button>
-        </form>
-      </section>
-
       <section class="section contact" id="contact">
-        <div class="section-heading"><p class="eyebrow">Contact</p><h2>Visit or email Tastee Pantry.</h2><p>No opening hours are displayed online. Please contact us to confirm order availability and collection details.</p></div>
+        <div class="section-heading"><p class="eyebrow">Contact</p><h2>Visit or email Tastee Pantry.</h2><p>Please contact us to confirm cake availability, bakery product details and collection arrangements.</p></div>
         <div class="contact-cards">
           <a href="mailto:tasteepantrynz@hotmail.com"><strong>Email</strong><span>tasteepantrynz@hotmail.com</span></a>
           <a href="https://maps.google.com/?q=6B%2F20%20Link%20Drive%2C%20Wairau%20Valley%2C%20Auckland%200627" target="_blank" rel="noreferrer"><strong>Address</strong><span>6B/20 Link Drive, Wairau Valley, Auckland 0627</span></a>
