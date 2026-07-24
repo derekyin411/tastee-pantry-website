@@ -1,26 +1,58 @@
 [
   {
     "name": "Classic Fresh Cream Cake",
-    "category": "Birthday cake",
-    "description": "A light celebration cake style suitable for birthdays, family gatherings and simple personalised messages.",
-    "image": ""
+    "category": "Signature birthday cakes",
+    "description": "A light fresh cream celebration cake suitable for birthdays, family gatherings and personalised messages.",
+    "image": "",
+    "prices": { "8 inch": 88, "10 inch": 128, "12 inch": 168 }
   },
   {
     "name": "Chocolate Celebration Cake",
-    "category": "Birthday cake",
+    "category": "Signature birthday cakes",
     "description": "A rich chocolate-style option for customers who want a premium birthday centrepiece.",
-    "image": ""
+    "image": "",
+    "prices": { "8 inch": 98, "10 inch": 138, "12 inch": 188 }
   },
   {
     "name": "Fruit Topped Cake",
-    "category": "Birthday cake",
+    "category": "Fruit & cream cakes",
     "description": "A fresh fruit-inspired cake style for colourful celebrations and elegant gifting.",
-    "image": ""
+    "image": "",
+    "prices": { "8 inch": 108, "10 inch": 148, "12 inch": 198 }
+  },
+  {
+    "name": "Mango Cream Cake",
+    "category": "Fruit & cream cakes",
+    "description": "A soft cream cake style with a bright mango-inspired finish for family occasions.",
+    "image": "",
+    "prices": { "8 inch": 108, "10 inch": 148, "12 inch": 198 }
+  },
+  {
+    "name": "Kids Character Cake",
+    "category": "Kids cakes",
+    "description": "A playful starting point for children’s birthdays, colours and simple character themes.",
+    "image": "",
+    "prices": { "8 inch": 128, "10 inch": 178, "12 inch": 238 }
+  },
+  {
+    "name": "Longevity Peach Cake",
+    "category": "Asian celebration cakes",
+    "description": "A traditional-inspired celebration cake style for birthdays, longevity and family banquets.",
+    "image": "",
+    "prices": { "8 inch": 128, "10 inch": 188, "12 inch": 258 }
   },
   {
     "name": "Custom Theme Cake",
-    "category": "Birthday cake",
+    "category": "Custom design cakes",
     "description": "A flexible starting point for colours, decorations and special requests subject to confirmation.",
-    "image": ""
+    "image": "",
+    "prices": { "8 inch": 138, "10 inch": 198, "12 inch": 278 }
+  },
+  {
+    "name": "Business Celebration Cake",
+    "category": "Custom design cakes",
+    "description": "A branded or event-friendly cake style for office celebrations and corporate occasions.",
+    "image": "",
+    "prices": { "8 inch": 128, "10 inch": 188, "12 inch": 258 }
   }
 ]
