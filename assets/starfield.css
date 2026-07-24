@@ -1,0 +1,144 @@
+/* Home-only dark starfield direction for DEVARO. Original CSS overlay; no external image assets. */
+.home-page {
+  background:#0d1113;
+}
+
+.home-page .site-header {
+  background:rgba(11,13,15,.78);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.home-page .brand-wordmark,
+.home-page .nav-links a {
+  color:#f3f0ea;
+}
+
+.home-page .nav-links a:hover {
+  color:var(--gold);
+}
+
+.home-page .nav-toggle {
+  color:#f3f0ea;
+  border-color:rgba(255,255,255,.2);
+}
+
+.home-page .landing-main {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(185,145,86,.18), transparent 22%),
+    radial-gradient(circle at 78% 10%, rgba(255,255,255,.10), transparent 18%),
+    radial-gradient(circle at 50% 92%, rgba(185,145,86,.16), transparent 22%),
+    linear-gradient(180deg,#0b0f12 0%,#131719 54%,#ece8df 54%,#ece8df 100%);
+}
+
+.home-page .landing-main::before,
+.home-page .landing-main::after {
+  content:"";
+  position:absolute;
+  inset:-20%;
+  z-index:-2;
+  pointer-events:none;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.92) 0 1px,transparent 1.5px),
+    radial-gradient(circle,rgba(185,145,86,.72) 0 1px,transparent 1.5px),
+    radial-gradient(circle,rgba(255,255,255,.55) 0 1px,transparent 1.5px);
+  background-size:76px 76px,132px 132px,188px 188px;
+  background-position:0 0,35px 50px,90px 20px;
+  opacity:.34;
+  animation:devaroStars 42s linear infinite;
+}
+
+.home-page .landing-main::after {
+  z-index:-1;
+  opacity:.16;
+  filter:blur(.2px);
+  animation-duration:72s;
+  animation-direction:reverse;
+}
+
+@keyframes devaroStars {
+  from { transform:translate3d(0,0,0); }
+  to { transform:translate3d(90px,120px,0); }
+}
+
+.home-page .landing-shell {
+  position:relative;
+  z-index:1;
+  color:#f5f1ea;
+  min-height:calc(88vh - 77px);
+}
+
+.home-page .landing-shell::before {
+  content:"";
+  position:absolute;
+  inset:28px 24px;
+  z-index:-1;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+  box-shadow:0 32px 120px rgba(0,0,0,.24);
+  pointer-events:none;
+}
+
+.home-page .brand-lockup,
+.home-page .brand-slogan p {
+  color:#f5f1ea;
+}
+
+.home-page .landing-brand-panel .eyebrow,
+.home-page .brand-slogan strong {
+  color:#d7b679;
+}
+
+.home-page .brand-statement {
+  border-left-color:#d0a766;
+}
+
+.home-page .brand-statement p {
+  color:#ddd5c8;
+}
+
+.home-page .brand-proof span {
+  color:#f1eadf;
+  border-color:rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);
+}
+
+.home-page .brand-slogan {
+  border-top-color:rgba(255,255,255,.16);
+}
+
+.home-page .landing-card {
+  background:linear-gradient(180deg,rgba(248,245,239,.94),rgba(226,217,204,.92));
+  border-color:rgba(255,255,255,.25);
+  box-shadow:0 34px 110px rgba(0,0,0,.34);
+}
+
+.home-page .landing-card-title,
+.home-page .landing-card-label {
+  color:#111;
+}
+
+.home-page .landing-card-label {
+  color:#8c6533;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .landing-main::before,
+  .home-page .landing-main::after {
+    animation:none;
+  }
+}
+
+@media (max-width:760px) {
+  .home-page .landing-main {
+    background:
+      radial-gradient(circle at 18% 12%, rgba(185,145,86,.18), transparent 25%),
+      linear-gradient(180deg,#0b0f12 0%,#171b1e 70%,#ece8df 70%,#ece8df 100%);
+  }
+
+  .home-page .landing-shell::before {
+    inset:18px;
+  }
+}
