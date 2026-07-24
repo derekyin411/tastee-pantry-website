@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Explore DEVARO custom cakes and submit a cake order for Auckland pick-up." />
+    <meta name="description" content="Explore DEVARO custom cakes, select cake options and submit a structured cake order for Auckland pick-up." />
     <title>DEVARO | Cakery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,41 +25,157 @@
       </nav>
     </header>
 
-    <main class="page-main">
+    <main class="page-main cakery-page">
       <section class="page-hero">
         <p class="eyebrow">DEVARO / Cakery</p>
-        <h1>Custom cakes for birthdays and celebrations.</h1>
-        <p>Choose a starting style below and submit your preferred date, flavour and message for confirmation. Payment is made in store after your order is confirmed.</p>
-        <div class="page-actions"><a class="button primary" href="#cake-order">Order a cake</a></div>
+        <h1>Custom cakes with a clearer ordering flow.</h1>
+        <p>Choose a cake style, select the size and filling, add your message and preferred pick-up details, then submit a structured order request for confirmation.</p>
+        <div class="page-actions">
+          <a class="button primary" href="#cake-catalogue">View cake styles</a>
+          <a class="button secondary" href="#custom-enquiry">Custom enquiry</a>
+        </div>
       </section>
 
-      <section class="section" id="cakery">
+      <section class="section" id="cake-catalogue">
         <div class="section-heading">
-          <p class="eyebrow">Cake collection</p>
+          <p class="eyebrow">Cake catalogue</p>
           <h2>Start with a style, then customise the details.</h2>
+          <p>Prices are shown as a starting guide and update when a size is selected in the order panel.</p>
         </div>
-        <div class="card-grid" id="cake-grid" data-source="data/cakes.json"></div>
+        <div class="cake-category-pills" aria-label="Cake categories">
+          <button type="button" data-filter="all" class="active">All</button>
+          <button type="button" data-filter="Signature birthday cakes">Birthday</button>
+          <button type="button" data-filter="Fruit & cream cakes">Fruit & cream</button>
+          <button type="button" data-filter="Kids cakes">Kids</button>
+          <button type="button" data-filter="Asian celebration cakes">Asian celebration</button>
+          <button type="button" data-filter="Custom design cakes">Custom</button>
+        </div>
+        <div class="card-grid cake-catalogue-grid" id="cake-grid" data-source="data/cakes.json"></div>
+      </section>
 
-        <div class="form-panel" id="cake-order">
-          <div>
-            <p class="eyebrow">Cake order request</p>
-            <h3>Submit a cake order</h3>
-            <p class="notice">Payment is made in store. Orders are subject to confirmation and availability. Please place cake orders at least 1 day in advance.</p>
+      <section class="section cake-order-section" id="cake-order">
+        <div class="cake-order-layout">
+          <div class="cake-order-preview">
+            <p class="eyebrow">Selected cake</p>
+            <div class="selected-cake-image" id="selected-cake-image"><span>Choose a cake style</span></div>
+            <h2 id="selected-cake-name">Select a cake from the catalogue</h2>
+            <p id="selected-cake-description">Once selected, the order form will update with the cake name and starting price.</p>
+            <div class="selected-price-line">
+              <span>Estimated price</span>
+              <strong id="selected-cake-price">—</strong>
+            </div>
+            <p class="small-note">Final pricing may change for extra decorations, special designs or large custom requests.</p>
           </div>
-          <form class="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-form-type="Cake order">
-            <input type="hidden" name="_subject" value="DEVARO - Cake order" />
-            <label>Customer name<input name="Customer name" autocomplete="name" required /></label>
-            <label>Phone number<input name="Phone number" type="tel" autocomplete="tel" required /></label>
-            <label>Email<input name="Email" type="email" autocomplete="email" required /></label>
-            <label>Pick-up date<input name="Pick-up date" type="date" required data-min-days="1" /></label>
-            <label>Pick-up time<input name="Pick-up time" type="time" required /></label>
-            <label>Cake style<select name="Cake style" id="cake-style-select" required><option value="">Select a cake style</option></select></label>
-            <label>Cake size<select name="Cake size" required><option value="">Select size</option><option>6 inch</option><option>8 inch</option><option>10 inch</option><option>Custom / please advise</option></select></label>
-            <label>Flavour<select name="Flavour" required><option value="">Select flavour</option><option>Vanilla cream</option><option>Chocolate</option><option>Fruit cream</option><option>Matcha</option><option>Custom / please advise</option></select></label>
-            <label class="full">Message on cake<input name="Message on cake" maxlength="80" placeholder="e.g. Happy Birthday Mia" /></label>
-            <label class="full">Special requests<textarea name="Special requests" rows="4" placeholder="Allergies, colours, decorations, serving needs"></textarea></label>
+
+          <div class="structured-order-card">
+            <p class="eyebrow">Cake order</p>
+            <h3>Order details</h3>
+            <form class="enquiry-form cake-order-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-form-type="Cake order">
+              <input type="hidden" name="_subject" value="DEVARO - Cake order" />
+              <input type="hidden" name="Selected cake" id="selected-cake-hidden" />
+              <input type="hidden" name="Estimated price" id="estimated-price-hidden" />
+
+              <label class="full">Cake style
+                <select name="Cake style" id="cake-style-select" required>
+                  <option value="">Select a cake style</option>
+                </select>
+              </label>
+
+              <label>Cake size
+                <select name="Cake size" id="cake-size-select" required>
+                  <option value="">Select size</option>
+                  <option value="8 inch">8 inch</option>
+                  <option value="10 inch">10 inch</option>
+                  <option value="12 inch">12 inch</option>
+                </select>
+              </label>
+
+              <label>Filling 1
+                <select name="Filling 1" required>
+                  <option value="">Select filling</option>
+                  <option>Vanilla cream</option>
+                  <option>Chocolate cream</option>
+                  <option>Fresh fruit cream</option>
+                  <option>Mango cream</option>
+                  <option>Taro</option>
+                  <option>Red bean</option>
+                </select>
+              </label>
+
+              <label>Filling 2
+                <select name="Filling 2">
+                  <option value="">Optional</option>
+                  <option>Vanilla cream</option>
+                  <option>Chocolate cream</option>
+                  <option>Fresh fruit cream</option>
+                  <option>Mango cream</option>
+                  <option>Taro</option>
+                  <option>Red bean</option>
+                </select>
+              </label>
+
+              <label>Pick-up date
+                <input name="Pick-up date" type="date" required data-min-days="1" />
+              </label>
+
+              <label>Pick-up time
+                <select name="Pick-up time" required>
+                  <option value="">Select time</option>
+                  <option>9:30am</option>
+                  <option>10:30am</option>
+                  <option>11:30am</option>
+                  <option>12:30pm</option>
+                  <option>1:30pm</option>
+                  <option>2:30pm</option>
+                  <option>3:30pm</option>
+                  <option>4:30pm</option>
+                  <option>5:30pm</option>
+                </select>
+              </label>
+
+              <label>Pick-up from
+                <select name="Pick-up from" required>
+                  <option>6B/20 Link Drive, Wairau Valley</option>
+                </select>
+              </label>
+
+              <label class="full">Message on cake
+                <textarea name="Message on cake" rows="2" maxlength="80" placeholder="Maximum 2 lines, e.g. Happy Birthday Mia"></textarea>
+              </label>
+
+              <label>Customer name<input name="Customer name" autocomplete="name" required /></label>
+              <label>Phone number<input name="Phone number" type="tel" autocomplete="tel" required /></label>
+              <label class="full">Email<input name="Email" type="email" autocomplete="email" required /></label>
+              <label class="full">Special requests<textarea name="Special requests" rows="4" placeholder="Allergies, colours, decorations, serving needs"></textarea></label>
+              <p class="form-status" aria-live="polite"></p>
+              <button class="button primary" type="submit">Submit cake order</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section custom-enquiry-section" id="custom-enquiry">
+        <div class="custom-enquiry-card">
+          <div>
+            <p class="eyebrow">Cake enquiry</p>
+            <h2>Need something custom?</h2>
+            <p>For custom birthday cakes, wedding cakes, business collaboration or special requests, send us a message and our team will get back to you.</p>
+          </div>
+          <form class="enquiry-form clean-enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-form-type="Cake enquiry">
+            <input type="hidden" name="_subject" value="DEVARO - Cake enquiry" />
+            <label>Name<input name="Name" autocomplete="name" required placeholder="Full name" /></label>
+            <label>Phone<input name="Phone" type="tel" autocomplete="tel" required placeholder="e.g. 021 123 4567" /></label>
+            <label class="full">Email<input name="Email" type="email" autocomplete="email" required placeholder="name@email.com" /></label>
+            <fieldset class="full enquiry-type-fieldset">
+              <legend>Enquiry type</legend>
+              <label><input type="checkbox" name="Enquiry type" value="Custom Birthday Cake" /> Custom birthday cake</label>
+              <label><input type="checkbox" name="Enquiry type" value="Wedding Cake" /> Wedding cake</label>
+              <label><input type="checkbox" name="Enquiry type" value="Business Collaboration" /> Business collaboration</label>
+              <label><input type="checkbox" name="Enquiry type" value="Other" /> Other</label>
+            </fieldset>
+            <label class="full">Message<textarea name="Message" rows="4" required placeholder="Tell us a little more about your enquiry"></textarea></label>
             <p class="form-status" aria-live="polite"></p>
-            <button class="button primary" type="submit">Submit cake order</button>
+            <button class="button primary" type="submit">Submit enquiry</button>
           </form>
         </div>
       </section>
